@@ -69,4 +69,25 @@ class MainTest {
         assertEquals("Thousand is wrong", "тысяча", actual)
     }
 
+    @Test
+    fun testTensAndUnits(){
+        main("49")
+        val actual = bytesOutput.toString(Charsets.UTF_8).trim()
+        assertEquals("Numbers with tens and units are wrong", actual, "сорок девять")
+    }
+
+    @Test
+    fun testHundredsAndSpecial(){
+        main("111")
+        val actual = bytesOutput.toString(Charsets.UTF_8).trim()
+        assertEquals("Numbers with hundreds and special are wrong", actual, "сто одиннадцать")
+    }
+
+    @Test
+    fun testHundredsAndTensAndUnits(){
+        main("899")
+        val actual = bytesOutput.toString(Charsets.UTF_8).trim()
+        assertEquals("Numbers with hundreds, tens and units are wrong", actual, "восемьсот девяносто девять")
+    }
+
 }
