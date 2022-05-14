@@ -1,6 +1,6 @@
 
 
-fun main(arg: String){
+fun main(arg: Int){
 
     val thousands = mapOf(1 to "тысяча")
 
@@ -20,7 +20,7 @@ fun main(arg: String){
                       9 to "девять")
 
 
-    var number = arg.toInt()
+    var number = arg
     var numberInWords = ""
 
     if (number >= 1000) {
@@ -44,5 +44,5 @@ fun main(arg: String){
         numberInWords += units[number]
     }
 
-    println(numberInWords)
+    print(numberInWords)
 }

@@ -36,56 +36,56 @@ class MainTest {
 
     @Test
     fun testUnits(){
-        main("1")
+        main(1)
         val actual = bytesOutput.toString(Charsets.UTF_8).trim()
         assertEquals("Units are wrong", "один", actual)
     }
 
     @Test
     fun testTens(){
-        main("30")
+        main(30)
         val actual = bytesOutput.toString(Charsets.UTF_8).trim()
         assertEquals("Tens are wrong", "тридцать", actual)
     }
 
     @Test
     fun testSpecial(){
-        main("13")
+        main(13)
         val actual = bytesOutput.toString(Charsets.UTF_8).trim()
         assertEquals("Special are wrong", "тринадцать", actual)
     }
 
     @Test
     fun testHundreds(){
-        main("900")
+        main(900)
         val actual = bytesOutput.toString(Charsets.UTF_8).trim()
         assertEquals("Hundreds are wrong", "девятьсот", actual)
     }
 
     @Test
     fun testThousand(){
-        main("1000")
+        main(1000)
         val actual = bytesOutput.toString(Charsets.UTF_8).trim()
         assertEquals("Thousand is wrong", "тысяча", actual)
     }
 
     @Test
     fun testTensAndUnits(){
-        main("49")
+        main(49)
         val actual = bytesOutput.toString(Charsets.UTF_8).trim()
         assertEquals("Numbers with tens and units are wrong", actual, "сорок девять")
     }
 
     @Test
     fun testHundredsAndSpecial(){
-        main("111")
+        main(111)
         val actual = bytesOutput.toString(Charsets.UTF_8).trim()
         assertEquals("Numbers with hundreds and special are wrong", actual, "сто одиннадцать")
     }
 
     @Test
     fun testHundredsAndTensAndUnits(){
-        main("899")
+        main(899)
         val actual = bytesOutput.toString(Charsets.UTF_8).trim()
         assertEquals("Numbers with hundreds, tens and units are wrong", actual, "восемьсот девяносто девять")
     }
